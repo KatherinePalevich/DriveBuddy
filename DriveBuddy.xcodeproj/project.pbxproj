@@ -13,6 +13,10 @@
 		C9929C2925F7F79B0078E91A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9929C2825F7F79B0078E91A /* Preview Assets.xcassets */; };
 		C9929C2B25F7F79B0078E91A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9929C2A25F7F79B0078E91A /* Persistence.swift */; };
 		C9929C2E25F7F79B0078E91A /* DriveBuddy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C9929C2C25F7F79B0078E91A /* DriveBuddy.xcdatamodeld */; };
+		C9929C3825F7F8C50078E91A /* Goals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9929C3725F7F8C50078E91A /* Goals.swift */; };
+		C9929C3B25F7FA5F0078E91A /* RecordRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9929C3A25F7FA5F0078E91A /* RecordRoute.swift */; };
+		C9929C3E25F7FA6D0078E91A /* OverallStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9929C3D25F7FA6D0078E91A /* OverallStats.swift */; };
+		C9929C4125F7FAEA0078E91A /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9929C4025F7FAEA0078E91A /* WelcomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		C9929C2A25F7F79B0078E91A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		C9929C2D25F7F79B0078E91A /* DriveBuddy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DriveBuddy.xcdatamodel; sourceTree = "<group>"; };
 		C9929C2F25F7F79B0078E91A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9929C3725F7F8C50078E91A /* Goals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goals.swift; sourceTree = "<group>"; };
+		C9929C3A25F7FA5F0078E91A /* RecordRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordRoute.swift; sourceTree = "<group>"; };
+		C9929C3D25F7FA6D0078E91A /* OverallStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverallStats.swift; sourceTree = "<group>"; };
+		C9929C4025F7FAEA0078E91A /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +64,8 @@
 		C9929C2025F7F79A0078E91A /* DriveBuddy */ = {
 			isa = PBXGroup;
 			children = (
+				C9929C3625F7F8A70078E91A /* Views */,
 				C9929C2125F7F79A0078E91A /* DriveBuddyApp.swift */,
-				C9929C2325F7F79A0078E91A /* ContentView.swift */,
 				C9929C2525F7F79B0078E91A /* Assets.xcassets */,
 				C9929C2A25F7F79B0078E91A /* Persistence.swift */,
 				C9929C2F25F7F79B0078E91A /* Info.plist */,
@@ -73,6 +81,18 @@
 				C9929C2825F7F79B0078E91A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C9929C3625F7F8A70078E91A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C9929C2325F7F79A0078E91A /* ContentView.swift */,
+				C9929C3725F7F8C50078E91A /* Goals.swift */,
+				C9929C3A25F7FA5F0078E91A /* RecordRoute.swift */,
+				C9929C3D25F7FA6D0078E91A /* OverallStats.swift */,
+				C9929C4025F7FAEA0078E91A /* WelcomeView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,9 +164,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9929C3E25F7FA6D0078E91A /* OverallStats.swift in Sources */,
+				C9929C3825F7F8C50078E91A /* Goals.swift in Sources */,
 				C9929C2B25F7F79B0078E91A /* Persistence.swift in Sources */,
+				C9929C4125F7FAEA0078E91A /* WelcomeView.swift in Sources */,
 				C9929C2E25F7F79B0078E91A /* DriveBuddy.xcdatamodeld in Sources */,
 				C9929C2425F7F79A0078E91A /* ContentView.swift in Sources */,
+				C9929C3B25F7FA5F0078E91A /* RecordRoute.swift in Sources */,
 				C9929C2225F7F79A0078E91A /* DriveBuddyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
