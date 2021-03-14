@@ -19,9 +19,9 @@ struct ContentView: View {
                 Image(systemName: "target")
                 Text("Goals")
             }
-            recordRoute.tabItem{
+            routes.tabItem{
                 Image(systemName: "car")
-                Text("Record Route")
+                Text("Routes")
             }
             overallStats.tabItem{
                 Image(systemName: "chart.bar.fill")
@@ -38,9 +38,9 @@ var goals: some View {
     }
 }
 
-var recordRoute: some View {
+var routes: some View {
     NavigationView {
-        RecordRoute()
+        Routes()
         WelcomeView()
     }
 }

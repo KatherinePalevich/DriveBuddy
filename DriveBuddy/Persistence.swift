@@ -13,9 +13,9 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+        for _ in 0..<1 {
+            let newGoal = Goal(context: viewContext)
+            newGoal.goal = "parallel parking"
         }
         do {
             try viewContext.save()

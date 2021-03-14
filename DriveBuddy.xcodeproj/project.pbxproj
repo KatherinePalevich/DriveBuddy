@@ -17,6 +17,7 @@
 		C9929C3B25F7FA5F0078E91A /* RecordRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9929C3A25F7FA5F0078E91A /* RecordRoute.swift */; };
 		C9929C3E25F7FA6D0078E91A /* OverallStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9929C3D25F7FA6D0078E91A /* OverallStats.swift */; };
 		C9929C4125F7FAEA0078E91A /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9929C4025F7FAEA0078E91A /* WelcomeView.swift */; };
+		C9929C4425FDC24F0078E91A /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9929C4325FDC24F0078E91A /* Routes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		C9929C3A25F7FA5F0078E91A /* RecordRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordRoute.swift; sourceTree = "<group>"; };
 		C9929C3D25F7FA6D0078E91A /* OverallStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverallStats.swift; sourceTree = "<group>"; };
 		C9929C4025F7FAEA0078E91A /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		C9929C4325FDC24F0078E91A /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				C9929C3A25F7FA5F0078E91A /* RecordRoute.swift */,
 				C9929C3D25F7FA6D0078E91A /* OverallStats.swift */,
 				C9929C4025F7FAEA0078E91A /* WelcomeView.swift */,
+				C9929C4325FDC24F0078E91A /* Routes.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				C9929C3825F7F8C50078E91A /* Goals.swift in Sources */,
 				C9929C2B25F7F79B0078E91A /* Persistence.swift in Sources */,
 				C9929C4125F7FAEA0078E91A /* WelcomeView.swift in Sources */,
+				C9929C4425FDC24F0078E91A /* Routes.swift in Sources */,
 				C9929C2E25F7F79B0078E91A /* DriveBuddy.xcdatamodeld in Sources */,
 				C9929C2425F7F79A0078E91A /* ContentView.swift in Sources */,
 				C9929C3B25F7FA5F0078E91A /* RecordRoute.swift in Sources */,
