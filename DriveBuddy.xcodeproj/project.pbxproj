@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C960A86B2606E28500C91859 /* GoalForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960A86A2606E28500C91859 /* GoalForm.swift */; };
 		C9929C2225F7F79A0078E91A /* DriveBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9929C2125F7F79A0078E91A /* DriveBuddyApp.swift */; };
 		C9929C2425F7F79A0078E91A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9929C2325F7F79A0078E91A /* ContentView.swift */; };
 		C9929C2625F7F79B0078E91A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9929C2525F7F79B0078E91A /* Assets.xcassets */; };
@@ -18,9 +19,13 @@
 		C9929C3E25F7FA6D0078E91A /* OverallStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9929C3D25F7FA6D0078E91A /* OverallStats.swift */; };
 		C9929C4125F7FAEA0078E91A /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9929C4025F7FAEA0078E91A /* WelcomeView.swift */; };
 		C9929C4425FDC24F0078E91A /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9929C4325FDC24F0078E91A /* Routes.swift */; };
+		C9929C4825FDCC860078E91A /* Goal+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9929C4725FDCC860078E91A /* Goal+Helper.swift */; };
+		C9929C4C25FDCE5B0078E91A /* GoalEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9929C4B25FDCE5B0078E91A /* GoalEditor.swift */; };
+		C9929C4F25FDCEA90078E91A /* GoalCreationSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9929C4E25FDCEA90078E91A /* GoalCreationSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C960A86A2606E28500C91859 /* GoalForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalForm.swift; sourceTree = "<group>"; };
 		C9929C1E25F7F79A0078E91A /* DriveBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriveBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9929C2125F7F79A0078E91A /* DriveBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveBuddyApp.swift; sourceTree = "<group>"; };
 		C9929C2325F7F79A0078E91A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,6 +39,9 @@
 		C9929C3D25F7FA6D0078E91A /* OverallStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverallStats.swift; sourceTree = "<group>"; };
 		C9929C4025F7FAEA0078E91A /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		C9929C4325FDC24F0078E91A /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
+		C9929C4725FDCC860078E91A /* Goal+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+Helper.swift"; sourceTree = "<group>"; };
+		C9929C4B25FDCE5B0078E91A /* GoalEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalEditor.swift; sourceTree = "<group>"; };
+		C9929C4E25FDCEA90078E91A /* GoalCreationSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCreationSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +74,7 @@
 		C9929C2025F7F79A0078E91A /* DriveBuddy */ = {
 			isa = PBXGroup;
 			children = (
+				C9929C4625FDCC760078E91A /* Models */,
 				C9929C3625F7F8A70078E91A /* Views */,
 				C9929C2125F7F79A0078E91A /* DriveBuddyApp.swift */,
 				C9929C2525F7F79B0078E91A /* Assets.xcassets */,
@@ -94,8 +103,19 @@
 				C9929C3D25F7FA6D0078E91A /* OverallStats.swift */,
 				C9929C4025F7FAEA0078E91A /* WelcomeView.swift */,
 				C9929C4325FDC24F0078E91A /* Routes.swift */,
+				C9929C4B25FDCE5B0078E91A /* GoalEditor.swift */,
+				C9929C4E25FDCEA90078E91A /* GoalCreationSheet.swift */,
+				C960A86A2606E28500C91859 /* GoalForm.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		C9929C4625FDCC760078E91A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C9929C4725FDCC860078E91A /* Goal+Helper.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,11 +187,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9929C4825FDCC860078E91A /* Goal+Helper.swift in Sources */,
 				C9929C3E25F7FA6D0078E91A /* OverallStats.swift in Sources */,
+				C9929C4C25FDCE5B0078E91A /* GoalEditor.swift in Sources */,
 				C9929C3825F7F8C50078E91A /* Goals.swift in Sources */,
 				C9929C2B25F7F79B0078E91A /* Persistence.swift in Sources */,
+				C960A86B2606E28500C91859 /* GoalForm.swift in Sources */,
 				C9929C4125F7FAEA0078E91A /* WelcomeView.swift in Sources */,
 				C9929C4425FDC24F0078E91A /* Routes.swift in Sources */,
+				C9929C4F25FDCEA90078E91A /* GoalCreationSheet.swift in Sources */,
 				C9929C2E25F7F79B0078E91A /* DriveBuddy.xcdatamodeld in Sources */,
 				C9929C2425F7F79A0078E91A /* ContentView.swift in Sources */,
 				C9929C3B25F7FA5F0078E91A /* RecordRoute.swift in Sources */,
