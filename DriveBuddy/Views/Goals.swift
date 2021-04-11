@@ -24,7 +24,7 @@ enum SortOrder {
 
 struct Goals: View {
     var body: some View {
-            GoalList2()
+        GoalList2()
     }
 }
 
@@ -107,13 +107,7 @@ struct GoalList3: View {
                 self.newGoalIsPresented = true
             },
             label: {
-                Label("Add Goal ", systemImage: "plus").imageScale(.medium)
-                    .padding(2.5)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10.0)
-                            .stroke(lineWidth: 2.0)
-                            .fill(Color.accentColor)
-                    )
+                Label("", systemImage: "plus.circle").imageScale(.large)
                 
             })
             .sheet(
@@ -138,7 +132,7 @@ struct GoalList3: View {
                     let nsError = error as NSError
                     fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
                 }
-    
+                
             })
             .environment(\.managedObjectContext, childContext)
             .accentColor(.purple)
@@ -165,17 +159,15 @@ struct GoalList3: View {
         case .byName:
             return Button(action: toggleSortOrder, label: {
                 HStack {
-                    Text("Goal Name")
                     Image(systemName: "tag")
-                        .imageScale(.small)
+                        .imageScale(.large)
                 }
             })
         case .byRemaining:
             return Button(action: toggleSortOrder, label: {
                 HStack {
-                    Text("Remaining")
-                    Image(systemName: "tray.2")
-                        .imageScale(.small)
+                    Image(systemName: "hourglass")
+                        .imageScale(.large)
                 }
             })
         }

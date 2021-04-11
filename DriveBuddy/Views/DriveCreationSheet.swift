@@ -1,17 +1,17 @@
 //
-//  GoalCreationSheet.swift
+//  DriveCreationSheet.swift
 //  DriveBuddy
 //
-//  Created by Katherine Palevich on 3/13/21.
+//  Created by Katherine Palevich on 4/3/21.
 //
 
 import CoreData
 import SwiftUI
 
-struct GoalCreationSheet: View {
+struct DriveCreationSheet: View {
     let context: NSManagedObjectContext
     /// Manages editing of the new item
-    @ObservedObject var goal: Goal
+    @ObservedObject var drive: Drive
 
     /// Executed when user cancels or saves the new item.
     let dismissAction: () -> Void
@@ -21,11 +21,11 @@ struct GoalCreationSheet: View {
 
     var body: some View {
         NavigationView {
-            GoalForm(goal: goal)
+            DriveForm(drive: drive)
                 .alert(
                     isPresented: $errorAlertIsPresented,
                     content: { Alert(title: Text(errorAlertTitle)) })
-                .navigationBarTitle("New Goal")
+                .navigationBarTitle("New Drive")
                 .navigationBarItems(
                     leading: Button(
                         action: self.dismissAction,
@@ -38,6 +38,7 @@ struct GoalCreationSheet: View {
 
     private func save() {
         do {
+            drive.timestamp = Date()
             try context.save()
             dismissAction()
         } catch {

@@ -1,22 +1,22 @@
 //
-//  GoalEditor.swift
+//  DriveEditor.swift
 //  DriveBuddy
 //
-//  Created by Katherine Palevich on 3/13/21.
+//  Created by Katherine Palevich on 4/3/21.
 //
 
 import CoreData
 import SwiftUI
 
-/// The Goal editor view, designed to be the destination of
+/// The Drive editor view, designed to be the destination of
 /// a NavigationLink.
-struct GoalEditor: View {
+struct DriveEditor: View {
     let context: NSManagedObjectContext
     /// Manages editing the player
-    @ObservedObject var goal: Goal
+    @ObservedObject var drive: Drive
 
     var body: some View {
-        GoalForm(goal: goal)
+        DriveForm(drive: drive)
             .onDisappear(perform: {
                 // Ignore validation errors
                 do {

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C94AF86F2619620A00642C6D /* DriveEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94AF86E2619620A00642C6D /* DriveEditor.swift */; };
+		C94AF872261962DC00642C6D /* DriveForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94AF871261962DC00642C6D /* DriveForm.swift */; };
+		C94AF875261963B100642C6D /* DriveCreationSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94AF874261963B100642C6D /* DriveCreationSheet.swift */; };
+		C94AF8782619649200642C6D /* Drive+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94AF8772619649200642C6D /* Drive+Helper.swift */; };
 		C960A86B2606E28500C91859 /* GoalForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960A86A2606E28500C91859 /* GoalForm.swift */; };
 		C9929C2225F7F79A0078E91A /* DriveBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9929C2125F7F79A0078E91A /* DriveBuddyApp.swift */; };
 		C9929C2425F7F79A0078E91A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9929C2325F7F79A0078E91A /* ContentView.swift */; };
@@ -25,6 +29,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C94AF86E2619620A00642C6D /* DriveEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveEditor.swift; sourceTree = "<group>"; };
+		C94AF871261962DC00642C6D /* DriveForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveForm.swift; sourceTree = "<group>"; };
+		C94AF874261963B100642C6D /* DriveCreationSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveCreationSheet.swift; sourceTree = "<group>"; };
+		C94AF8772619649200642C6D /* Drive+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Drive+Helper.swift"; sourceTree = "<group>"; };
 		C960A86A2606E28500C91859 /* GoalForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalForm.swift; sourceTree = "<group>"; };
 		C9929C1E25F7F79A0078E91A /* DriveBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriveBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9929C2125F7F79A0078E91A /* DriveBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveBuddyApp.swift; sourceTree = "<group>"; };
@@ -106,6 +114,9 @@
 				C9929C4B25FDCE5B0078E91A /* GoalEditor.swift */,
 				C9929C4E25FDCEA90078E91A /* GoalCreationSheet.swift */,
 				C960A86A2606E28500C91859 /* GoalForm.swift */,
+				C94AF86E2619620A00642C6D /* DriveEditor.swift */,
+				C94AF871261962DC00642C6D /* DriveForm.swift */,
+				C94AF874261963B100642C6D /* DriveCreationSheet.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -114,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				C9929C4725FDCC860078E91A /* Goal+Helper.swift */,
+				C94AF8772619649200642C6D /* Drive+Helper.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -193,11 +205,15 @@
 				C9929C3825F7F8C50078E91A /* Goals.swift in Sources */,
 				C9929C2B25F7F79B0078E91A /* Persistence.swift in Sources */,
 				C960A86B2606E28500C91859 /* GoalForm.swift in Sources */,
+				C94AF872261962DC00642C6D /* DriveForm.swift in Sources */,
 				C9929C4125F7FAEA0078E91A /* WelcomeView.swift in Sources */,
+				C94AF8782619649200642C6D /* Drive+Helper.swift in Sources */,
 				C9929C4425FDC24F0078E91A /* Routes.swift in Sources */,
 				C9929C4F25FDCEA90078E91A /* GoalCreationSheet.swift in Sources */,
 				C9929C2E25F7F79B0078E91A /* DriveBuddy.xcdatamodeld in Sources */,
+				C94AF875261963B100642C6D /* DriveCreationSheet.swift in Sources */,
 				C9929C2425F7F79A0078E91A /* ContentView.swift in Sources */,
+				C94AF86F2619620A00642C6D /* DriveEditor.swift in Sources */,
 				C9929C3B25F7FA5F0078E91A /* RecordRoute.swift in Sources */,
 				C9929C2225F7F79A0078E91A /* DriveBuddyApp.swift in Sources */,
 			);

@@ -8,12 +8,13 @@
         <relationship name="goals" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Goal" inverseName="drives" inverseEntity="Goal"/>
     </entity>
     <entity name="Goal" representedClassName="Goal" syncable="YES" codeGenerationType="class">
+        <attribute name="details" optional="YES" attributeType="String"/>
         <attribute name="done" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="goal" optional="YES" attributeType="String"/>
         <relationship name="drives" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Drive" inverseName="goals" inverseEntity="Drive"/>
     </entity>
     <elements>
         <element name="Drive" positionX="-16.015625" positionY="36.83203125" width="128" height="118"/>
-        <element name="Goal" positionX="224.515625" positionY="-12.45703125" width="128" height="74"/>
+        <element name="Goal" positionX="-301.2578125" positionY="-52.2109375" width="128" height="89"/>
     </elements>
 </model>

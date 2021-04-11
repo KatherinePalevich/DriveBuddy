@@ -12,21 +12,25 @@ import CoreData
 struct ContentView: View {
     let persistenceController = PersistenceController.shared
     @Environment(\.managedObjectContext) private var viewContext
+    @State private var selection = 1
 
     var body: some View {
-        TabView{
+        TabView(selection: $selection){
             goals.tabItem{
                 Image(systemName: "target")
                 Text("Goals")
             }
+            .tag(0)
             routes.tabItem{
                 Image(systemName: "car")
                 Text("Routes")
             }
+            .tag(1)
             overallStats.tabItem{
                 Image(systemName: "chart.bar.fill")
                 Text("Overall Stats")
             }
+            .tag(2)
         }.environment(\.managedObjectContext, persistenceController.container.viewContext)
         .accentColor(Color.purple)
     }
