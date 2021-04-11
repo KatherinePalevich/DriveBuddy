@@ -10,10 +10,10 @@ import SwiftUI
 
 struct DriveCreationSheet: View {
     let context: NSManagedObjectContext
-    /// Manages editing of the new item
+    /// Manages editing of the new drive
     @ObservedObject var drive: Drive
 
-    /// Executed when user cancels or saves the new item.
+    /// Executed when user cancels or saves the new drive.
     let dismissAction: () -> Void
 
     @State private var errorAlertIsPresented = false
@@ -38,7 +38,6 @@ struct DriveCreationSheet: View {
 
     private func save() {
         do {
-            drive.timestamp = Date()
             try context.save()
             dismissAction()
         } catch {

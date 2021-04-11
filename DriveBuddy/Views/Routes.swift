@@ -49,9 +49,9 @@ struct RouteList2: View {
     private var fetchRequest: FetchRequest<Drive> {
         switch sortOrder {
         case .byFirst:
-            return FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Drive.timestamp, ascending: true)])
+            return FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Drive.date, ascending: true)])
         case .byLast:
-            return FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Drive.timestamp, ascending: false)])
+            return FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Drive.date, ascending: false)])
         }
     }
 }
@@ -129,7 +129,7 @@ struct RouteList3: View {
         childContext.parent = viewContext
         return DriveCreationSheet(
             context:childContext,
-            drive: Drive(context: childContext),
+            drive: newDrive(childContext: childContext),
             dismissAction: {
                 self.newDriveIsPresented = false
                 do {
@@ -144,6 +144,12 @@ struct RouteList3: View {
             })
             .environment(\.managedObjectContext, childContext)
             .accentColor(.purple)
+    }
+    
+    private func newDrive(childContext: NSManagedObjectContext) -> Drive {
+        let drive = Drive(context: childContext)
+        drive.date = Date()
+        return drive
     }
     
     private func deleteDrives(offsets: IndexSet) {

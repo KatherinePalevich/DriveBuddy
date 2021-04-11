@@ -38,6 +38,7 @@ struct GoalCreationSheet: View {
 
     private func save() {
         do {
+            goal.completed = false
             try context.save()
             dismissAction()
         } catch {

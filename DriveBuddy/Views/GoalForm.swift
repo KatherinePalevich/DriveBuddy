@@ -18,7 +18,7 @@ struct GoalForm: View {
         Form {
             TextField("Goal", text: $goal.wrappedName)
             Toggle(isOn: $goal.completed) {
-                                Text("Completed")
+                Text("Completed")
             }
             TextEditor(text: $goal.wrappedDetails)
         }
