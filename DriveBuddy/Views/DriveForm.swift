@@ -18,6 +18,7 @@ struct DriveForm: View {
     var body: some View {
         VStack {
             Text("Drive \(drive.wrappedDate )")
+            Text("Drive Duration \(elapsedTimeFormatter(time: self.stopWatch.elapsedTime))")
             Text(self.stopWatch.stopWatchTime)
                 .font(.custom("courier", size: 60))
                 .frame(width: UIScreen.main.bounds.size.width,
@@ -36,6 +37,14 @@ struct DriveForm: View {
             }
         }
     }
+}
+
+func elapsedTimeFormatter(time: TimeInterval) -> String {
+    let formatter = DateComponentsFormatter()
+    formatter.unitsStyle = .full // or .short or .abbreviated
+    formatter.allowedUnits = [.second, .minute, .hour]
+
+    return formatter.string(from: time)!
 }
 
 // Code borrowed from https://programmingwithswift.com/build-a-stopwatch-app-with-swiftui/

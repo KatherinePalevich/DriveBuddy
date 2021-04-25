@@ -11,6 +11,7 @@ import SwiftUI
 import CoreData
 
 class StopWatch: ObservableObject {
+    @Published var elapsedTime: TimeInterval = 0
     private var sourceTimer: DispatchSourceTimer?
     private let queue = DispatchQueue(label: "stopwatch.timer")
     private var counter: Int = 0
@@ -55,6 +56,7 @@ class StopWatch: ObservableObject {
     }
     
     func pause() {
+        elapsedTime = TimeInterval(counter) / 100.0
         self.paused = !self.paused
         self.sourceTimer?.suspend()
     }
@@ -128,50 +130,14 @@ extension StopWatch {
 
 extension StopWatch {
     static func convertCountToTimeString(counter: Int) -> String {
-        let millseconds = counter % 100
-        let seconds = counter / 100
-        let minutes = seconds / 60
-        
-        var millsecondsString = "\(millseconds)"
-        var secondsString = "\(seconds)"
-        var minutesString = "\(minutes)"
-        
-        if millseconds < 10 {
-            millsecondsString = "0" + millsecondsString
-        }
-        
-        if seconds < 10 {
-            secondsString = "0" + secondsString
-        }
-        
-        if minutes < 10 {
-            minutesString = "0" + minutesString
-        }
-        
-        return "\(minutesString):\(secondsString):\(millsecondsString)"
+        return elapsedTimeFormatter(time: TimeInterval(counter) / 100.0)
     }
-}
+    
+    static func elapsedTimeFormatter(time: TimeInterval) -> String {
+        let formatter = DateComponentsFormatter()
+        formatter.zeroFormattingBehavior = .pad
+        formatter.allowedUnits = [.second, .minute, .hour]
 
-extension StopWatch {
-    func convertCountToTimeDouble(counter: Int, drive: Drive) {
-        let millseconds = counter % 100
-        let seconds = counter / 100
-        let minutes = seconds / 60
-        
-        var millsecondsString = "\(millseconds)"
-        var secondsString = "\(seconds)"
-        var minutesString = "\(minutes)"
-        
-        if millseconds < 10 {
-            millsecondsString = "0" + millsecondsString
-        }
-        
-        if seconds < 10 {
-            secondsString = "0" + secondsString
-        }
-        
-        if minutes < 10 {
-            minutesString = "0" + minutesString
-        }
+        return formatter.string(from: time)!
     }
 }

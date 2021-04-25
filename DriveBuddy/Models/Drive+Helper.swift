@@ -19,10 +19,10 @@ extension Drive {
             date = newValue
         }
     }
-    var wrappedDrive: Double {
+    var wrappedDrive: String {
         
         get {
-            driveLength
+            driveLength ?? ""
             
         }
         set(newValue) {

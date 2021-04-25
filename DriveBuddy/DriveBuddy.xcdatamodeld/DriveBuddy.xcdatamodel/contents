@@ -2,9 +2,9 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20C69" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Drive" representedClassName="Drive" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="driveLength" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="driveLength" optional="YES" attributeType="String"/>
         <attribute name="notes" optional="YES" attributeType="String"/>
-        <attribute name="route" optional="YES" attributeType="Transformable"/>
+        <attribute name="route" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData"/>
         <relationship name="goals" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Goal" inverseName="drives" inverseEntity="Goal"/>
     </entity>
     <entity name="Goal" representedClassName="Goal" syncable="YES" codeGenerationType="class">
@@ -14,7 +14,7 @@
         <relationship name="drives" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Drive" inverseName="goals" inverseEntity="Drive"/>
     </entity>
     <elements>
-        <element name="Drive" positionX="-16.015625" positionY="36.83203125" width="128" height="104"/>
+        <element name="Drive" positionX="-16.015625" positionY="36.83203125" width="128" height="118"/>
         <element name="Goal" positionX="-301.2578125" positionY="-52.2109375" width="128" height="89"/>
     </elements>
 </model>
