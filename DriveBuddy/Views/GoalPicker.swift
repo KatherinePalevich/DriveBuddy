@@ -14,7 +14,7 @@ struct GoalPicker : View {
                   predicate: NSPredicate(format: "done == 0")
     )
     private var goals: FetchedResults<Goal>
-    @State private var selectedGoal : Goal?
+    @Binding var selectedGoal : Goal?
     
     
     var body: some View {

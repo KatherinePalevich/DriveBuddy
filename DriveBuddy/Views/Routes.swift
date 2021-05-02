@@ -69,6 +69,8 @@ struct RouteList3: View {
     
     /// Controls the presentation of the goal creation sheet.
     @State private var newDriveIsPresented = false
+    @State private var liveDriveIsPresented = false
+    @State private var drive : Drive?
     
     var body: some View {
         driveList
@@ -79,6 +81,9 @@ struct RouteList3: View {
                     newDriveButton
                 },
                 trailing: toggleOrderingButton)
+            .sheet(isPresented: $liveDriveIsPresented){
+                LiveDrive(drive: drive!, showLiveDrive: $liveDriveIsPresented)
+            }
     }
     
     private var driveList: some View {
@@ -130,8 +135,12 @@ struct RouteList3: View {
         return DriveCreationSheet(
             context:childContext,
             drive: newDrive(childContext: childContext),
-            dismissAction: {
+            dismissAction: { goal in
                 self.newDriveIsPresented = false
+                if goal != nil {
+                    self.drive = newDrive(childContext: viewContext)
+                    self.liveDriveIsPresented = true
+                }
                 do {
                     try viewContext.save()
                 } catch {

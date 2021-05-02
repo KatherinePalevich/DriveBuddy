@@ -12,7 +12,6 @@
 		C94AF875261963B100642C6D /* DriveCreationSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94AF874261963B100642C6D /* DriveCreationSheet.swift */; };
 		C94AF8782619649200642C6D /* Drive+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94AF8772619649200642C6D /* Drive+Helper.swift */; };
 		C94F21ED263E55D700D06B83 /* LiveDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F21EC263E55D700D06B83 /* LiveDrive.swift */; };
-		C94F21EF263E594C00D06B83 /* PreDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F21EE263E594C00D06B83 /* PreDrive.swift */; };
 		C94F21F1263E5EC500D06B83 /* GoalPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F21F0263E5EC500D06B83 /* GoalPicker.swift */; };
 		C9506FE826227FD200EB1280 /* StopWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9506FE726227FD200EB1280 /* StopWatch.swift */; };
 		C960A86B2606E28500C91859 /* GoalForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960A86A2606E28500C91859 /* GoalForm.swift */; };
@@ -37,7 +36,6 @@
 		C94AF874261963B100642C6D /* DriveCreationSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveCreationSheet.swift; sourceTree = "<group>"; };
 		C94AF8772619649200642C6D /* Drive+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Drive+Helper.swift"; sourceTree = "<group>"; };
 		C94F21EC263E55D700D06B83 /* LiveDrive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveDrive.swift; sourceTree = "<group>"; };
-		C94F21EE263E594C00D06B83 /* PreDrive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreDrive.swift; sourceTree = "<group>"; };
 		C94F21F0263E5EC500D06B83 /* GoalPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalPicker.swift; sourceTree = "<group>"; };
 		C9506FE726227FD200EB1280 /* StopWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatch.swift; sourceTree = "<group>"; };
 		C960A86A2606E28500C91859 /* GoalForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalForm.swift; sourceTree = "<group>"; };
@@ -123,7 +121,6 @@
 				C94AF871261962DC00642C6D /* DriveForm.swift */,
 				C94AF874261963B100642C6D /* DriveCreationSheet.swift */,
 				C94F21EC263E55D700D06B83 /* LiveDrive.swift */,
-				C94F21EE263E594C00D06B83 /* PreDrive.swift */,
 				C94F21F0263E5EC500D06B83 /* GoalPicker.swift */,
 			);
 			path = Views;
@@ -211,7 +208,6 @@
 				C9929C4825FDCC860078E91A /* Goal+Helper.swift in Sources */,
 				C9929C3E25F7FA6D0078E91A /* OverallStats.swift in Sources */,
 				C9929C4C25FDCE5B0078E91A /* GoalEditor.swift in Sources */,
-				C94F21EF263E594C00D06B83 /* PreDrive.swift in Sources */,
 				C94F21ED263E55D700D06B83 /* LiveDrive.swift in Sources */,
 				C9929C3825F7F8C50078E91A /* Goals.swift in Sources */,
 				C9929C2B25F7F79B0078E91A /* Persistence.swift in Sources */,
