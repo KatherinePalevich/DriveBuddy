@@ -21,7 +21,7 @@ struct DriveCreationSheet: View {
 
     var body: some View {
         NavigationView {
-            DriveForm(drive: drive)
+            PreDrive(drive: drive)
                 .alert(
                     isPresented: $errorAlertIsPresented,
                     content: { Alert(title: Text(errorAlertTitle)) })

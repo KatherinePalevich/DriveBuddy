@@ -10,7 +10,7 @@ import UIKit
 
 extension Goal {
     
-    var wrappedName: String {
+    var wrappedGoal: String {
       get {
         goal ?? ""
       }
@@ -32,7 +32,7 @@ extension Goal {
     
     var completed: Bool {
       get {
-        done ?? false
+        done
       }
       set(newValue) {
         objectWillChange.send()

@@ -97,7 +97,7 @@ struct GoalList3: View {
         GoalEditor(
             context:viewContext,
             goal: goal)
-            .navigationBarTitle(goal.wrappedName)
+            .navigationBarTitle(goal.wrappedGoal)
     }
     
     /// The button that presents the item creation sheet.
@@ -183,7 +183,7 @@ struct GoalRow: View {
     
     var body: some View {
         VStack(alignment:.leading) {
-            Text(goal.wrappedName)
+            Text(goal.wrappedGoal)
         }
     }
 }

@@ -16,7 +16,7 @@ struct GoalForm: View {
 
     var body: some View {
         Form {
-            TextField("Goal", text: $goal.wrappedName)
+            TextField("Goal", text: $goal.wrappedGoal)
             Toggle(isOn: $goal.completed) {
                 Text("Completed")
             }
