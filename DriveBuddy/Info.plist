@@ -41,6 +41,8 @@
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>To record and track your location during a drive.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>To record and track your location during a drive.</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

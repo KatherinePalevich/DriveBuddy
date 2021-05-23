@@ -15,7 +15,24 @@ struct DriveForm: View {
     private let pasteboard = UIPasteboard.general
     
     var body: some View {
-        Text("Drive \(drive.wrappedDate )")
+        Text("Drive on \(date(drive.wrappedDate))")
+        Text("Drive Length: \(duration(TimeInterval(drive.driveLength)))")
+    }
+    
+    private func date(_ date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+
+        return formatter.string(from: date)
+    }
+    
+    private func duration(_ duration: TimeInterval) -> String {
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [.hour, .minute, .second]
+        formatter.unitsStyle = .full
+
+        return formatter.string(from: duration)!
     }
 }
 

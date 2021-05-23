@@ -158,7 +158,6 @@ struct RouteList3: View {
     private func newDrive(childContext: NSManagedObjectContext) -> Drive {
         let drive = Drive(context: childContext)
         drive.date = Date()
-        drive.driveLength = "0.0"
         return drive
     }
     

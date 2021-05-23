@@ -19,15 +19,4 @@ extension Drive {
             date = newValue
         }
     }
-    var wrappedDrive: String {
-        
-        get {
-            driveLength ?? ""
-            
-        }
-        set(newValue) {
-            objectWillChange.send()
-            driveLength = newValue
-        }
-    }
 }
