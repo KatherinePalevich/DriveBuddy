@@ -13,7 +13,6 @@
 		C94AF8782619649200642C6D /* Drive+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94AF8772619649200642C6D /* Drive+Helper.swift */; };
 		C94F21ED263E55D700D06B83 /* LiveDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F21EC263E55D700D06B83 /* LiveDrive.swift */; };
 		C94F21F1263E5EC500D06B83 /* GoalPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F21F0263E5EC500D06B83 /* GoalPicker.swift */; };
-		C9506FE826227FD200EB1280 /* StopWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9506FE726227FD200EB1280 /* StopWatch.swift */; };
 		C960A86B2606E28500C91859 /* GoalForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960A86A2606E28500C91859 /* GoalForm.swift */; };
 		C9735EAB2647962E006B5ACC /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9735EAA2647962E006B5ACC /* LocationManager.swift */; };
 		C9929C2225F7F79A0078E91A /* DriveBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9929C2125F7F79A0078E91A /* DriveBuddyApp.swift */; };
@@ -38,7 +37,6 @@
 		C94AF8772619649200642C6D /* Drive+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Drive+Helper.swift"; sourceTree = "<group>"; };
 		C94F21EC263E55D700D06B83 /* LiveDrive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveDrive.swift; sourceTree = "<group>"; };
 		C94F21F0263E5EC500D06B83 /* GoalPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalPicker.swift; sourceTree = "<group>"; };
-		C9506FE726227FD200EB1280 /* StopWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatch.swift; sourceTree = "<group>"; };
 		C960A86A2606E28500C91859 /* GoalForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalForm.swift; sourceTree = "<group>"; };
 		C9735EAA2647962E006B5ACC /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		C9929C1E25F7F79A0078E91A /* DriveBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriveBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,7 +131,6 @@
 			children = (
 				C9929C4725FDCC860078E91A /* Goal+Helper.swift */,
 				C94AF8772619649200642C6D /* Drive+Helper.swift */,
-				C9506FE726227FD200EB1280 /* StopWatch.swift */,
 				C9735EAA2647962E006B5ACC /* LocationManager.swift */,
 			);
 			path = Models;
@@ -226,7 +223,6 @@
 				C9929C2425F7F79A0078E91A /* ContentView.swift in Sources */,
 				C94F21F1263E5EC500D06B83 /* GoalPicker.swift in Sources */,
 				C94AF86F2619620A00642C6D /* DriveEditor.swift in Sources */,
-				C9506FE826227FD200EB1280 /* StopWatch.swift in Sources */,
 				C9929C2225F7F79A0078E91A /* DriveBuddyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
