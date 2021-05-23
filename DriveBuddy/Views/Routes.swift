@@ -130,15 +130,11 @@ struct RouteList3: View {
     
     /// The goal creation sheet.
     private var newDriveCreationSheet: some View {
-        let childContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-        childContext.parent = viewContext
         return DriveCreationSheet(
-            context:childContext,
-            drive: newDrive(childContext: childContext),
-            dismissAction: { goal in
+            dismissAction: { goals in
                 self.newDriveIsPresented = false
-                if goal != nil {
-                    self.drive = newDrive(childContext: viewContext)
+                if !goals.isEmpty {
+                    self.drive = newDrive(goals: goals)
                     self.liveDriveIsPresented = true
                 }
                 do {
@@ -151,13 +147,13 @@ struct RouteList3: View {
                 }
     
             })
-            .environment(\.managedObjectContext, childContext)
             .accentColor(.purple)
     }
     
-    private func newDrive(childContext: NSManagedObjectContext) -> Drive {
-        let drive = Drive(context: childContext)
+    private func newDrive(goals: Set<Goal>) -> Drive {
+        let drive = Drive(context: viewContext)
         drive.date = Date()
+        drive.goals = goals as NSSet
         return drive
     }
     

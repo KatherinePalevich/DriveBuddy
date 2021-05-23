@@ -17,6 +17,7 @@ struct DriveForm: View {
     var body: some View {
         Text("Drive on \(date(drive.wrappedDate))")
         Text("Drive Length: \(duration(TimeInterval(drive.driveLength)))")
+        Text("Goals Practiced: \(drive.wrappedGoals)")
     }
     
     private func date(_ date: Date) -> String {

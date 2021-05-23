@@ -8,28 +8,24 @@
 import CoreData
 import SwiftUI
 
-struct DriveCreationSheet: View {
-    let context: NSManagedObjectContext
-    /// Manages editing of the new drive
-    @ObservedObject var drive: Drive
-
+struct DriveCreationSheet: View {    
     /// Executed when user cancels or saves the new drive.
-    let dismissAction: (Goal?) -> Void
+    let dismissAction: (Set<Goal>) -> Void
 
     @State private var errorAlertIsPresented = false
     @State private var errorAlertTitle = ""
-    @State private var selectedGoal : Goal?
+    @State private var selectedGoals : Set<Goal> = []
 
     var body: some View {
         NavigationView {
-            GoalPicker(selectedGoal: $selectedGoal)
+            GoalPicker(selection: $selectedGoals)
                 .alert(
                     isPresented: $errorAlertIsPresented,
                     content: { Alert(title: Text(errorAlertTitle)) })
                 .navigationBarTitle("New Drive")
                 .navigationBarItems(
                     leading: Button(
-                        action: {self.dismissAction(nil)},
+                        action: {self.dismissAction([])},
                         label: { Text("Cancel") }),
                     trailing: Button(
                         action: self.startDrive,
@@ -38,16 +34,10 @@ struct DriveCreationSheet: View {
     }
 
     private func startDrive() {
-        dismissAction(selectedGoal)
+        dismissAction(selectedGoals)
     }
     
     private func save() {
-        do {
-            try context.save()
-            dismissAction(selectedGoal)
-        } catch {
-            errorAlertTitle = (error as? LocalizedError)?.errorDescription ?? "An error occurred"
-            errorAlertIsPresented = true
-        }
+        dismissAction(selectedGoals)
     }
 }
