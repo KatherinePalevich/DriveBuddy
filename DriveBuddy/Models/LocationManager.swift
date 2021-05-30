@@ -45,7 +45,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
     
     var lastLocation : CLLocationCoordinate2D? {
-        drivingRoute.points.last?.coordinate
+        drivingRoute.points.last
     }
     
     // MARK: locationManagerDelegate
@@ -60,7 +60,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         print("locations = \(locValue.latitude) \(locValue.longitude)")
         for location in locations {
-            drivingRoute.points.append(MKMapPoint(location.coordinate))
+            drivingRoute.points.append(location.coordinate)
         }
     }
 }

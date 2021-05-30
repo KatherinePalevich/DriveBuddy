@@ -42,8 +42,11 @@ struct LiveDrive: View {
                         Text("longitude: \(userLongitude)")
                     }
                     Text(startDate, style: .timer)
+                    let locations = drive.route?.points ?? []
+                    let polyline = MKPolyline(coordinates: locations, count: locations.count)
                     Map(coordinateRegion: $region,
                         showsUserLocation: true, userTrackingMode: .constant(.follow))
+                        .addOverlay(polyline)
                         .frame(width: 400, height: 300)
                 }.navigationBarTitle(Text("Live Drive"), displayMode: .inline)
                 .navigationBarItems(trailing: Button(action: {

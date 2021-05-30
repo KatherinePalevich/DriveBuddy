@@ -9,14 +9,14 @@ import MapKit
 import Foundation
 public class DrivingRoute : NSObject, NSSecureCoding{
     public static var supportsSecureCoding = true
-    var points : [MKMapPoint]
+    var points : [CLLocationCoordinate2D]
     
     public required convenience init?(coder decoder: NSCoder) {
-        let points = decoder.decodeObject(forKey: "points") as? [MKMapPoint] ?? []
+        let points = decoder.decodeObject(forKey: "points") as? [CLLocationCoordinate2D] ?? []
         self.init(points: points)
     }
     
-    init(points: [MKMapPoint]) {
+    init(points: [CLLocationCoordinate2D]) {
         self.points = points
     }
     
