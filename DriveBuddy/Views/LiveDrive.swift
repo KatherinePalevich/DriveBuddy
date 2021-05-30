@@ -14,15 +14,21 @@ struct LiveDrive: View {
     private let pasteboard = UIPasteboard.general
     @Binding var showLiveDrive: Bool
     @State var startDate = Date()
-    @ObservedObject var locationManager = LocationManager()
+    @ObservedObject var locationManager : LocationManager
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 47.606, longitude: -122.332), span: MKCoordinateSpan(latitudeDelta: 5, longitudeDelta: 5))
     
+    init(drive: Drive, showLiveDrive : Binding<Bool>) {
+        self.drive = drive
+        self._showLiveDrive = showLiveDrive
+        self.locationManager = LocationManager(drivingRoute: drive.route!)
+    }
+    
     var userLatitude: String {
-        return "\(locationManager.lastLocation?.coordinate.latitude ?? 0)"
+        return "\(locationManager.lastLocation?.latitude ?? 0)"
     }
     
     var userLongitude: String {
-        return "\(locationManager.lastLocation?.coordinate.longitude ?? 0)"
+        return "\(locationManager.lastLocation?.longitude ?? 0)"
     }
     
     

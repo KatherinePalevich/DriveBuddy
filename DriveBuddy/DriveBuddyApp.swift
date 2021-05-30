@@ -10,6 +10,9 @@ import SwiftUI
 @main
 struct DriveBuddyApp: App {
     let persistenceController = PersistenceController.shared
+    init(){
+        DrivingRouteTransformer.register()
+    }
 
     var body: some Scene {
         WindowGroup {

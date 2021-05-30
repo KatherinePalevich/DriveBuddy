@@ -154,6 +154,7 @@ struct RouteList3: View {
         let drive = Drive(context: viewContext)
         drive.date = Date()
         drive.goals = goals as NSSet
+        drive.route = DrivingRoute()
         return drive
     }
     

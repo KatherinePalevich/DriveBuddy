@@ -9,15 +9,17 @@
 import Foundation
 import CoreLocation
 import Combine
+import MapKit
+import SwiftUI
 
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
 
+    var drivingRoute : DrivingRoute
     private let locationManager = CLLocationManager()
     @Published var locationStatus: CLAuthorizationStatus?
-    @Published var lastLocation: CLLocation?
-    private var locationList: [CLLocation] = []
 
-    override init() {
+    init(drivingRoute: DrivingRoute) {
+        self.drivingRoute = drivingRoute
         super.init()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -41,15 +43,24 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         default: return "unknown"
         }
     }
-
+    
+    var lastLocation : CLLocationCoordinate2D? {
+        drivingRoute.points.last?.coordinate
+    }
+    
+    // MARK: locationManagerDelegate
+    
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         locationStatus = status
         print(#function, statusString)
     }
     
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last else { return }
-        lastLocation = location
-        print(#function, location)
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        for location in locations {
+            drivingRoute.points.append(MKMapPoint(location.coordinate))
+        }
     }
 }
