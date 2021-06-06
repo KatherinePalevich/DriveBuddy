@@ -24,10 +24,14 @@ struct MapView: UIViewRepresentable {
             self.parent = parent
         }
         
-        func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
-//            if !mapView.showsUserLocation {
-//                parent.centerCoordinate = mapView.centerCoordinate
-//            }
+        func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+            if let routePolyline = overlay as? MKPolyline {
+                let renderer = MKPolylineRenderer(polyline: routePolyline)
+                renderer.strokeColor = UIColor.systemBlue
+                renderer.lineWidth = 5
+                return renderer
+            }
+            return MKOverlayRenderer()
         }
     }
     
@@ -51,27 +55,19 @@ struct MapView: UIViewRepresentable {
         let polyline = MKPolyline(coordinates: lineCoordinates, count: lineCoordinates.count)
         uiView.addOverlay(polyline)
 
-        if let currentLocation = self.currentLocation {
-            if let annotation = self.withAnnotation {
-                uiView.removeAnnotation(annotation)
-            }
-            uiView.showsUserLocation = true
-            let region = MKCoordinateRegion(center: currentLocation, latitudinalMeters: 800, longitudinalMeters: 800)
-            uiView.setRegion(region, animated: true)
-        } else if let annotation = self.withAnnotation {
-            uiView.removeAnnotations(uiView.annotations)
-            uiView.addAnnotation(annotation)
-        }
+//        if let currentLocation = self.currentLocation {
+//            if let annotation = self.withAnnotation {
+//                uiView.removeAnnotation(annotation)
+//            }
+//            uiView.showsUserLocation = true
+//            let region = MKCoordinateRegion(center: currentLocation, latitudinalMeters: 800, longitudinalMeters: 800)
+//            uiView.setRegion(region, animated: true)
+//        } else if let annotation = self.withAnnotation {
+//            uiView.removeAnnotations(uiView.annotations)
+//            uiView.addAnnotation(annotation)
+//        }
     }
     
-    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        if let routePolyline = overlay as? MKPolyline {
-            let renderer = MKPolylineRenderer(polyline: routePolyline)
-            renderer.strokeColor = UIColor.systemBlue
-            renderer.lineWidth = 5
-            return renderer
-        }
-        return MKOverlayRenderer()
-    }
+    
 
 }
