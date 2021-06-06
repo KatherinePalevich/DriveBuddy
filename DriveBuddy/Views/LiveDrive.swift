@@ -41,11 +41,6 @@ struct LiveDrive: View {
                     }
                     Text(startDate, style: .timer)
                     let locations = drive.route?.points ?? []
-                    let region = MKCoordinateRegion(
-                        // Apple Park
-                        center: locations.last ?? CLLocationCoordinate2D(latitude: 37.334803, longitude: -122.008965),
-                        span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
-                      )
                     MapView(lineCoordinates: $drive.wrappedRoute.points)
                 }
                 .navigationBarTitle(Text("Live Drive"), displayMode: .inline)
