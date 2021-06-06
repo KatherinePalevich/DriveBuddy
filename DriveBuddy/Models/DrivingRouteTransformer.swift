@@ -10,7 +10,7 @@ import Foundation
 class DrivingRouteTransformer : NSSecureUnarchiveFromDataTransformer {
     
     override static var allowedTopLevelClasses: [AnyClass] {
-        [DrivingRoute.self]
+        [DrivingRoute.self, NSArray.self]
     }
     
     static func register() {

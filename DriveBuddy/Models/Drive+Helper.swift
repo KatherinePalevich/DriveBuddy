@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import CoreLocation
 
 extension Drive {
     //Date of the drive when it was created
@@ -27,6 +28,15 @@ extension Drive {
                 $0.wrappedGoal < $1.wrappedGoal
             }
             return g2.map(\.wrappedGoal).joined(separator: ",")
+        }
+    }
+    
+    var wrappedRoute : DrivingRoute {
+        get {
+            route!
+        }
+        set {
+            route = newValue
         }
     }
 }

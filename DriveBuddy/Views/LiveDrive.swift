@@ -15,7 +15,6 @@ struct LiveDrive: View {
     @Binding var showLiveDrive: Bool
     @State var startDate = Date()
     @ObservedObject var locationManager : LocationManager
-    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 47.606, longitude: -122.332), span: MKCoordinateSpan(latitudeDelta: 5, longitudeDelta: 5))
     
     init(drive: Drive, showLiveDrive : Binding<Bool>) {
         self.drive = drive
@@ -34,7 +33,6 @@ struct LiveDrive: View {
     
     var body: some View {
         NavigationView {
-            ScrollView{
                 VStack {
                     Text("location status: \(locationManager.statusString)")
                     HStack {
@@ -43,19 +41,28 @@ struct LiveDrive: View {
                     }
                     Text(startDate, style: .timer)
                     let locations = drive.route?.points ?? []
-                    let polyline = MKPolyline(coordinates: locations, count: locations.count)
-                    Map(coordinateRegion: $region,
-                        showsUserLocation: true, userTrackingMode: .constant(.follow))
-                        .addOverlay(polyline)
-                        .frame(width: 400, height: 300)
-                }.navigationBarTitle(Text("Live Drive"), displayMode: .inline)
+                    let region = MKCoordinateRegion(
+                        // Apple Park
+                        center: locations.last ?? CLLocationCoordinate2D(latitude: 37.334803, longitude: -122.008965),
+                        span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+                      )
+                    MapView(lineCoordinates: $drive.wrappedRoute.points)
+                }
+                .navigationBarTitle(Text("Live Drive"), displayMode: .inline)
                 .navigationBarItems(trailing: Button(action: {
                     self.showLiveDrive = false
                     drive.driveLength = Int32(-startDate.timeIntervalSinceNow)
+                    do {
+                        try viewContext.save()
+                    } catch {
+                        // Replace this implementation with code to handle the error appropriately.
+                        // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                        let nsError = error as NSError
+                        fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                    }
                 })  {
                     Text("Done").bold()
                 })
-            }
         }
     }
 }

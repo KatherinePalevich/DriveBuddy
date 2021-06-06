@@ -14,7 +14,7 @@ import SwiftUI
 
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
 
-    var drivingRoute : DrivingRoute
+    @Published var drivingRoute : DrivingRoute
     private let locationManager = CLLocationManager()
     @Published var locationStatus: CLAuthorizationStatus?
 
@@ -57,10 +57,10 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        objectWillChange.send()
         for location in locations {
             drivingRoute.points.append(location.coordinate)
         }
+        
     }
 }
