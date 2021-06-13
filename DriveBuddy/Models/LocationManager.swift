@@ -59,7 +59,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         objectWillChange.send()
         for location in locations {
-            drivingRoute.points.append(location.coordinate)
+            drivingRoute.append(point: location.coordinate)
         }
         
     }
