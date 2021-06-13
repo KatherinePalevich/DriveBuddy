@@ -28,4 +28,8 @@ public class DrivingRoute : NSObject, NSSecureCoding{
         coder.encode(self.points, forKey: "points")
     }
     
+    public func append(point: CLLocationCoordinate2D){
+        points.append(point)
+    }
+    
 }

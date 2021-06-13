@@ -39,4 +39,10 @@ extension Drive {
             route = newValue
         }
     }
+    
+    func append(point: CLLocationCoordinate2D){
+        willChangeValue(forKey: "route")
+        route!.points.append(point)
+        didChangeValue(forKey: "route")
+    }
 }
