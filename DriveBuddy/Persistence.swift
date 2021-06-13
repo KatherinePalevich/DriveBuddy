@@ -6,6 +6,7 @@
 //
 
 import CoreData
+import UIKit
 
 struct PersistenceController {
     static let shared = PersistenceController()
@@ -51,5 +52,16 @@ struct PersistenceController {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
+        
+        // Automatically persist when entering background.
+        if (!inMemory) {
+            let center = NotificationCenter.default
+            let notification = UIApplication.willResignActiveNotification
+            center.addObserver(forName: notification, object: nil, queue: nil) { [self] _ in
+                if self.container.viewContext.hasChanges {
+                    try? self.container.viewContext.save()
+                }
+            }
+        }
     }
 }

@@ -83,6 +83,7 @@ struct RouteList3: View {
                 trailing: toggleOrderingButton)
             .sheet(isPresented: $liveDriveIsPresented){
                 LiveDrive(drive: drive!, showLiveDrive: $liveDriveIsPresented)
+                    .environment(\.managedObjectContext,viewContext)
             }
     }
     
@@ -148,6 +149,7 @@ struct RouteList3: View {
     
             })
             .accentColor(.purple)
+            .environment(\.managedObjectContext,viewContext)
     }
     
     private func newDrive(goals: Set<Goal>) -> Drive {
