@@ -202,6 +202,7 @@ struct DriveRow: View {
     var body: some View {
         VStack(alignment:.leading) {
             Text(date)
+            Text("\(drive.wrappedRoute.points.count)")
         }
     }
     

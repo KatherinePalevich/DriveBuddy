@@ -9,7 +9,7 @@ import CoreData
 import SwiftUI
 
 struct DriveForm: View {
-    /// Manages the item form
+    /// Manages the drive form
     @Environment(\.managedObjectContext) private var viewContext
     @ObservedObject var drive: Drive
     private let pasteboard = UIPasteboard.general
@@ -18,6 +18,7 @@ struct DriveForm: View {
         Text("Drive on \(date(drive.wrappedDate))")
         Text("Drive Length: \(duration(TimeInterval(drive.driveLength)))")
         Text("Goals Practiced: \(drive.wrappedGoals)")
+        MapView(lineCoordinates: $drive.wrappedRoute.points, done: true)
     }
     
     private func date(_ date: Date) -> String {

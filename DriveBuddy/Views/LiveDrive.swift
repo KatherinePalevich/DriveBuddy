@@ -40,8 +40,7 @@ struct LiveDrive: View {
                         Text("longitude: \(userLongitude)")
                     }
                     Text(startDate, style: .timer)
-                    let locations = drive.route?.points ?? []
-                    MapView(lineCoordinates: $drive.wrappedRoute.points)
+                    MapView(lineCoordinates: $drive.wrappedRoute.points, done: false)
                 }
                 .navigationBarTitle(Text("Live Drive"), displayMode: .inline)
                 .navigationBarItems(trailing: Button(action: {

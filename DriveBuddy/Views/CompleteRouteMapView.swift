@@ -1,20 +1,15 @@
 //
-//  MapView.swift
+//  CompleteRouteMapView.swift
 //  DriveBuddy
 //
-//  Created by Katherine Palevich on 5/29/21.
+//  Created by Katherine Palevich on 6/5/21.
 //
 
-
-//code taken from https://codakuma.com/the-line-is-a-dot-to-you/
 import SwiftUI
 import MapKit
 
-struct MapView: UIViewRepresentable {
-    
+struct CompleteRouteMapView: UIViewRepresentable {
     @Binding var lineCoordinates: [CLLocationCoordinate2D]
-    //if true, already have all points needed to draw polyline
-    var done : Bool
 
     var currentLocation: CLLocationCoordinate2D?
     var withAnnotation: MKPointAnnotation?
@@ -43,23 +38,33 @@ struct MapView: UIViewRepresentable {
     
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()
-        mapView.delegate = context.coordinator
-        mapView.showsUserLocation = !done
-        var center = CLLocationCoordinate2D()
-        if !done {
-            mapView.userTrackingMode = .follow
-        } else {
-            center = lineCoordinates.first ?? CLLocationCoordinate2D()
-        }
         let region = MKCoordinateRegion(
-            center: center, latitudinalMeters: 200, longitudinalMeters: 200)
+            center: CLLocationCoordinate2D(), latitudinalMeters: 200, longitudinalMeters: 200)
+        mapView.setRegion(region, animated: false)
         mapView.region = region
         mapView.delegate = context.coordinator
+        mapView.showsUserLocation = true
+        mapView.userTrackingMode = .follow
         return mapView
     }
     
     func updateUIView(_ uiView: MKMapView, context: Context) {
         let polyline = MKPolyline(coordinates: lineCoordinates, count: lineCoordinates.count)
         uiView.addOverlay(polyline)
+
+//        if let currentLocation = self.currentLocation {
+//            if let annotation = self.withAnnotation {
+//                uiView.removeAnnotation(annotation)
+//            }
+//            uiView.showsUserLocation = true
+//            let region = MKCoordinateRegion(center: currentLocation, latitudinalMeters: 800, longitudinalMeters: 800)
+//            uiView.setRegion(region, animated: true)
+//        } else if let annotation = self.withAnnotation {
+//            uiView.removeAnnotations(uiView.annotations)
+//            uiView.addAnnotation(annotation)
+//        }
     }
+    
+    
+
 }
