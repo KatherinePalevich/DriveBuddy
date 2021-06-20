@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C91CE086267EF976008A272D /* GoalStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91CE085267EF976008A272D /* GoalStats.swift */; };
 		C94AF86F2619620A00642C6D /* DriveEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94AF86E2619620A00642C6D /* DriveEditor.swift */; };
 		C94AF872261962DC00642C6D /* DriveForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94AF871261962DC00642C6D /* DriveForm.swift */; };
 		C94AF875261963B100642C6D /* DriveCreationSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94AF874261963B100642C6D /* DriveCreationSheet.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C91CE085267EF976008A272D /* GoalStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalStats.swift; sourceTree = "<group>"; };
 		C94AF86E2619620A00642C6D /* DriveEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveEditor.swift; sourceTree = "<group>"; };
 		C94AF871261962DC00642C6D /* DriveForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveForm.swift; sourceTree = "<group>"; };
 		C94AF874261963B100642C6D /* DriveCreationSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveCreationSheet.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				C9929C2325F7F79A0078E91A /* ContentView.swift */,
 				C9929C3725F7F8C50078E91A /* Goals.swift */,
 				C9929C3D25F7FA6D0078E91A /* OverallStats.swift */,
+				C91CE085267EF976008A272D /* GoalStats.swift */,
 				C9929C4025F7FAEA0078E91A /* WelcomeView.swift */,
 				C9929C4325FDC24F0078E91A /* Routes.swift */,
 				C9929C4B25FDCE5B0078E91A /* GoalEditor.swift */,
@@ -225,6 +228,7 @@
 				C9929C4125F7FAEA0078E91A /* WelcomeView.swift in Sources */,
 				C95AD08E2663572C000ACEB9 /* MapView.swift in Sources */,
 				C94AF8782619649200642C6D /* Drive+Helper.swift in Sources */,
+				C91CE086267EF976008A272D /* GoalStats.swift in Sources */,
 				C9929C4425FDC24F0078E91A /* Routes.swift in Sources */,
 				C9929C4F25FDCEA90078E91A /* GoalCreationSheet.swift in Sources */,
 				C9735EAB2647962E006B5ACC /* LocationManager.swift in Sources */,

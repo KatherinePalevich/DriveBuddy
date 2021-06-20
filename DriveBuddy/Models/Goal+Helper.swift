@@ -39,4 +39,14 @@ extension Goal {
         done = newValue
       }
     }
+    
+    var wrappedDrives: Set<Drive> {
+        get {
+            if let drives = drives {
+                return Set(_immutableCocoaSet: drives)
+            } else {
+                return Set()
+            }
+        }
+    }
 }

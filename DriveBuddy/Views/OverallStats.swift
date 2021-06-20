@@ -26,11 +26,14 @@ struct OverallStats: View {
     }
     
     var body: some View {
-        VStack{
+        Form{
             let formatted = String(format: "%.2f", totalDriveTimeHours)
             Text("Total Hours: \(formatted)")
             Text("Total Drives: \(drives.count)")
-        }
+            Section(header: Text("Goals")){
+                GoalStats()
+            }
+        }.navigationTitle("Overall Stats")
     }
 }
 
