@@ -84,6 +84,7 @@ struct RouteList3: View {
             .sheet(isPresented: $liveDriveIsPresented){
                 LiveDrive(drive: drive!, showLiveDrive: $liveDriveIsPresented)
                     .environment(\.managedObjectContext,viewContext)
+                    .accentColor(.purple)
             }
     }
     
@@ -156,7 +157,6 @@ struct RouteList3: View {
         let drive = Drive(context: viewContext)
         drive.date = Date()
         drive.goals = goals as NSSet
-        drive.route = DrivingRoute()
         return drive
     }
     
@@ -204,7 +204,6 @@ struct DriveRow: View {
     var body: some View {
         VStack(alignment:.leading) {
             Text(date)
-            Text("\(drive.wrappedRoute.points.count)")
         }
     }
     

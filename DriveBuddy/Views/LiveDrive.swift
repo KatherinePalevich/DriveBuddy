@@ -19,7 +19,7 @@ struct LiveDrive: View {
     init(drive: Drive, showLiveDrive : Binding<Bool>) {
         self.drive = drive
         self._showLiveDrive = showLiveDrive
-        self.locationManager = LocationManager(drivingRoute: drive.route!)
+        self.locationManager = LocationManager(drivingRoute: DrivingRoute())
     }
     
     var userLatitude: String {
@@ -40,12 +40,13 @@ struct LiveDrive: View {
                         Text("longitude: \(userLongitude)")
                     }
                     Text(startDate, style: .timer)
-                    MapView(lineCoordinates: $drive.wrappedRoute.points, done: false)
+                    MapView(lineCoordinates: $locationManager.drivingRoute.points, done: false)
                 }
                 .navigationBarTitle(Text("Live Drive"), displayMode: .inline)
                 .navigationBarItems(trailing: Button(action: {
                     self.showLiveDrive = false
                     drive.driveLength = Int32(-startDate.timeIntervalSinceNow)
+                    drive.route = locationManager.drivingRoute.asString
                     do {
                         try viewContext.save()
                     } catch {

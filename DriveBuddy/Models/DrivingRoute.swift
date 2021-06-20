@@ -7,6 +7,17 @@
 
 import MapKit
 import Foundation
+
+extension CLLocationCoordinate2D {
+    init(string: String) {
+        let coords = string.components(separatedBy: ",").map{
+            Double($0)!
+        }
+        self.init(latitude: coords[0], longitude: coords[1])
+    }
+}
+
+
 public class DrivingRoute : NSObject, NSSecureCoding{
     public static var supportsSecureCoding = true
     var points : [CLLocationCoordinate2D]
@@ -20,6 +31,10 @@ public class DrivingRoute : NSObject, NSSecureCoding{
         self.points = points
     }
     
+    convenience init(pointsString: String) {
+        self.init(points:pointsString.components(separatedBy: "|").map { CLLocationCoordinate2D(string:$0) })
+    }
+    
     override init(){
         self.points = []
     }
@@ -30,6 +45,12 @@ public class DrivingRoute : NSObject, NSSecureCoding{
     
     public func append(point: CLLocationCoordinate2D){
         points.append(point)
+    }
+    
+    var asString : String {
+        points.map{
+            "\($0.latitude),\($0.longitude)"
+        }.joined(separator: "|")
     }
     
 }

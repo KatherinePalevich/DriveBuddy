@@ -31,18 +31,7 @@ extension Drive {
         }
     }
     
-    var wrappedRoute : DrivingRoute {
-        get {
-            route!
-        }
-        set {
-            route = newValue
-        }
-    }
-    
-    func append(point: CLLocationCoordinate2D){
-        willChangeValue(forKey: "route")
-        route!.points.append(point)
-        didChangeValue(forKey: "route")
+    var points : DrivingRoute {
+        return DrivingRoute(pointsString: self.route ?? "")
     }
 }
