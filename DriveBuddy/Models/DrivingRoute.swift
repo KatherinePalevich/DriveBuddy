@@ -9,11 +9,15 @@ import MapKit
 import Foundation
 
 extension CLLocationCoordinate2D {
-    init(string: String) {
-        let coords = string.components(separatedBy: ",").map{
+    init?(string: String) {
+        let coords = string.components(separatedBy: ",")
+        guard coords.count == 2 else {
+            return nil
+        }
+        let coordNums = coords.map{
             Double($0)!
         }
-        self.init(latitude: coords[0], longitude: coords[1])
+        self.init(latitude: coordNums[0], longitude: coordNums[1])
     }
 }
 
@@ -32,7 +36,7 @@ public class DrivingRoute : NSObject, NSSecureCoding{
     }
     
     convenience init(pointsString: String) {
-        self.init(points:pointsString.components(separatedBy: "|").map { CLLocationCoordinate2D(string:$0) })
+        self.init(points:pointsString.components(separatedBy: "|").compactMap { CLLocationCoordinate2D(string:$0) })
     }
     
     override init(){

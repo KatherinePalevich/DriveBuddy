@@ -18,7 +18,7 @@ struct DriveForm: View {
         Text("Drive on \(date(drive.wrappedDate))")
         Text("Drive Length: \(duration(TimeInterval(drive.driveLength)))")
         Text("Goals Practiced: \(drive.wrappedGoals)")
-        MapView(lineCoordinates: .constant(DrivingRoute(pointsString: drive.route!).points), done: true)
+        MapView(lineCoordinates: .constant(DrivingRoute(pointsString: drive.route ?? "").points), done: true)
     }
     
     private func date(_ date: Date) -> String {
