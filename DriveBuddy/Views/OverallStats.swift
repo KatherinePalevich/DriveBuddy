@@ -9,8 +9,28 @@ import SwiftUI
 import CoreData
 
 struct OverallStats: View {
+    
+    @FetchRequest(
+        entity: Drive.entity(),
+        sortDescriptors: []
+    ) var drives: FetchedResults<Drive>
+    
+    var totalDriveTime : TimeInterval {
+        drives.reduce(0.0) {
+            $0 + TimeInterval($1.driveLength)
+        }
+    }
+    
+    var totalDriveTimeHours : Double {
+        totalDriveTime/3600
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            let formatted = String(format: "%.2f", totalDriveTimeHours)
+            Text("Total Hours: \(formatted)")
+            Text("Total Drives: \(drives.count)")
+        }
     }
 }
 
