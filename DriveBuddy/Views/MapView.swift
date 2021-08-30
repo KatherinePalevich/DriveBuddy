@@ -59,7 +59,12 @@ struct MapView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: MKMapView, context: Context) {
-        let polyline = MKPolyline(coordinates: lineCoordinates, count: lineCoordinates.count)
-        uiView.addOverlay(polyline)
+        // Work around bug on Xcode simulator, location data. The first few coordinates have a jump.
+        let amountToTrim = 2
+        if lineCoordinates.count >= amountToTrim{
+            let trimmedLineCoordinates = Array(lineCoordinates.suffix(from: amountToTrim))
+            let polyline = MKPolyline(coordinates: trimmedLineCoordinates, count: trimmedLineCoordinates.count)
+            uiView.addOverlay(polyline)
+        }
     }
 }
