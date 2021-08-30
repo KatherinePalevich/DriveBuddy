@@ -39,6 +39,7 @@ struct ContentView: View {
 var goals: some View {
     NavigationView {
         Goals()
+        GoalWelcomeView()
     }
 }
 
@@ -52,6 +53,7 @@ var routes: some View {
 var overallStats: some View {
     NavigationView {
         OverallStats()
+        StatsWelcomeView()
     }
 }
 

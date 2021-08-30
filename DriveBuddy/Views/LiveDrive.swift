@@ -34,12 +34,12 @@ struct LiveDrive: View {
     var body: some View {
         NavigationView {
                 VStack {
-                    Text("location status: \(locationManager.statusString)")
-                    HStack {
-                        Text("latitude: \(userLatitude)")
-                        Text("longitude: \(userLongitude)")
-                    }
-                    Text(startDate, style: .timer)
+                    //Text("location status: \(locationManager.statusString)")
+//                    HStack {
+//                        Text("latitude: \(userLatitude)")
+//                        Text("longitude: \(userLongitude)")
+//                    }
+                    Text(startDate, style: .timer).font(.title)
                     MapView(lineCoordinates: $locationManager.drivingRoute.points, done: false)
                 }
                 .navigationBarTitle(Text("Live Drive"), displayMode: .inline)
