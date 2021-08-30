@@ -19,6 +19,9 @@ struct GoalPicker: View {
     var body: some View {
         if goals.count < 1 {
             Text("No more goals left to complete!")
+            NavigationLink(destination: Goals()){
+                Text("Add a goal")
+            }
         } else {
             Form {
                 ForEach(goals, id:\.self){ goal in
