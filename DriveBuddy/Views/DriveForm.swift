@@ -15,9 +15,9 @@ struct DriveForm: View {
     private let pasteboard = UIPasteboard.general
     
     var body: some View {
-        Text("Drive on \(date(drive.wrappedDate))")
-        Text("Drive Length: \(duration(TimeInterval(drive.driveLength)))")
-        Text("Goals Practiced: \(drive.wrappedGoals)")
+        Text("Drive on \(date(drive.wrappedDate))").padding(.horizontal)
+        Text("Drive Length: \(duration(TimeInterval(drive.driveLength)))").padding(.horizontal)
+        Text("Goals Practiced: \(drive.wrappedGoals)").padding(.horizontal)
         MapView(lineCoordinates: .constant(DrivingRoute(pointsString: drive.route ?? "").points), done: true)
     }
     
