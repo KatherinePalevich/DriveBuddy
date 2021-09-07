@@ -15,17 +15,26 @@ struct DriveForm: View {
     private let pasteboard = UIPasteboard.general
     
     var body: some View {
-        Text("Drive on \(date(drive.wrappedDate))").padding(.horizontal)
-        Text("Drive Length: \(duration(TimeInterval(drive.driveLength)))").padding(.horizontal)
-        Text("Goals Practiced: \(drive.wrappedGoals)").padding(.horizontal)
+        ScrollView{
+            HStack() {
+                VStack(alignment: .leading, spacing: 5){
+                    Text("Drive on \(date(drive.wrappedDate))")
+                    Text("Drive Length: \(duration(TimeInterval(drive.driveLength)))")
+                    Text("Goals Practiced").font(.headline)
+                    Text("\(drive.wrappedGoals)")
+                }
+                Spacer()
+            }.padding()
+        }.frame( height: 200)
         MapView(lineCoordinates: .constant(DrivingRoute(pointsString: drive.route ?? "").points), done: true)
+        
     }
     
     private func date(_ date: Date) -> String {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         formatter.timeStyle = .short
-
+        
         return formatter.string(from: date)
     }
     
@@ -33,7 +42,7 @@ struct DriveForm: View {
         let formatter = DateComponentsFormatter()
         formatter.allowedUnits = [.hour, .minute, .second]
         formatter.unitsStyle = .full
-
+        
         return formatter.string(from: duration)!
     }
 }

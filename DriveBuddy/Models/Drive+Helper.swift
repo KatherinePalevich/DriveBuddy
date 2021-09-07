@@ -21,13 +21,14 @@ extension Drive {
         }
     }
     
+    // Markdown list
     var wrappedGoals : String {
         get {
             let g = goals as? Set<Goal> ?? []
             let g2 = g.sorted {
                 $0.wrappedGoal < $1.wrappedGoal
             }
-            return g2.map(\.wrappedGoal).joined(separator: ",")
+            return g2.map(\.wrappedGoal).map{"- " + $0}.joined(separator: "\n")
         }
     }
     

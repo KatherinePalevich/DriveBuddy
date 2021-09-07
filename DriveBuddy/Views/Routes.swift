@@ -107,6 +107,7 @@ struct RouteList3: View {
             context:viewContext,
             drive: drive)
             .navigationBarTitle(date(drive: drive))
+            .navigationBarTitleDisplayMode(.inline)
     }
     
     private func date(drive: Drive) -> String {
