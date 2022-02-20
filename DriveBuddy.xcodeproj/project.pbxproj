@@ -34,6 +34,7 @@
 		C9929C4C25FDCE5B0078E91A /* GoalEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9929C4B25FDCE5B0078E91A /* GoalEditor.swift */; };
 		C9929C4F25FDCEA90078E91A /* GoalCreationSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9929C4E25FDCEA90078E91A /* GoalCreationSheet.swift */; };
 		C9C4834F265A311300E57AEE /* DrivingRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C4834E265A311300E57AEE /* DrivingRoute.swift */; };
+		C9D9C52C27BEC9A200AA105C /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9C52B27BEC9A200AA105C /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		C9929C4B25FDCE5B0078E91A /* GoalEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalEditor.swift; sourceTree = "<group>"; };
 		C9929C4E25FDCEA90078E91A /* GoalCreationSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCreationSheet.swift; sourceTree = "<group>"; };
 		C9C4834E265A311300E57AEE /* DrivingRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrivingRoute.swift; sourceTree = "<group>"; };
+		C9D9C52B27BEC9A200AA105C /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				C95AD08B2663532D000ACEB9 /* Map+Extension.swift */,
 				C95AD08D2663572C000ACEB9 /* MapView.swift */,
 				C94A60D426DC7FC0005E2812 /* StatsWelcomeView.swift */,
+				C9D9C52B27BEC9A200AA105C /* TestView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				C9929C2425F7F79A0078E91A /* ContentView.swift in Sources */,
 				C94F21F1263E5EC500D06B83 /* GoalPicker.swift in Sources */,
 				C94AF86F2619620A00642C6D /* DriveEditor.swift in Sources */,
+				C9D9C52C27BEC9A200AA105C /* TestView.swift in Sources */,
 				C9929C2225F7F79A0078E91A /* DriveBuddyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

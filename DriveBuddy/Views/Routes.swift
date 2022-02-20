@@ -81,6 +81,9 @@ struct RouteList3: View {
                     newDriveButton
                 },
                 trailing: toggleOrderingButton)
+            .sheet(
+                isPresented: $newDriveIsPresented,
+                content: { self.newDriveCreationSheet })
             .sheet(isPresented: $liveDriveIsPresented){
                 LiveDrive(drive: drive!, showLiveDrive: $liveDriveIsPresented)
                     .environment(\.managedObjectContext,viewContext)
@@ -126,9 +129,6 @@ struct RouteList3: View {
             label: {
                 Label("", systemImage: "plus.circle").imageScale(.large)
             })
-            .sheet(
-                isPresented: $newDriveIsPresented,
-                content: { self.newDriveCreationSheet })
     }
     
     /// The goal creation sheet.

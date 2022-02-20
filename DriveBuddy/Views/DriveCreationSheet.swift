@@ -23,13 +23,25 @@ struct DriveCreationSheet: View {
                     isPresented: $errorAlertIsPresented,
                     content: { Alert(title: Text(errorAlertTitle)) })
                 .navigationBarTitle("New Drive")
-                .navigationBarItems(
-                    leading: Button(
-                        action: {self.dismissAction([])},
-                        label: { Text("Cancel") }),
-                    trailing: Button(
-                        action: self.startDrive,
-                        label: { Text("Start") }))
+                .toolbar(){
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button(
+                            action: {self.dismissAction([])},
+                            label: { Text("Cancel") })
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button(
+                            action: self.startDrive,
+                            label: { Text("Start") })
+                    }
+                }
+//                .navigationBarItems(
+//                    leading: Button(
+//                        action: {self.dismissAction([])},
+//                        label: { Text("Cancel") }),
+//                    trailing: Button(
+//                        action: self.startDrive,
+//                        label: { Text("Start") }))
         }
     }
 
