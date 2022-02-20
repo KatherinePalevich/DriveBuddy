@@ -24,6 +24,20 @@ enum DriveSortOrder {
     
 }
 
+enum ActiveSheet: Identifiable {
+    case driveCreation
+    case liveDrive(drive:Drive)
+    
+    var id: Int {
+        switch (self) {
+        case .driveCreation:
+            return 0
+        case .liveDrive:
+            return 1
+        }
+    }
+}
+
 struct Routes: View {
     var body: some View {
         RouteList2()
@@ -67,10 +81,8 @@ struct RouteList3: View {
         fetchRequest.wrappedValue
     }
     
-    /// Controls the presentation of the goal creation sheet.
-    @State private var newDriveIsPresented = false
-    @State private var liveDriveIsPresented = false
-    @State private var drive : Drive?
+    /// Controls the presentation of the goal creation sheet and live drive sheet
+    @State var activeSheet: ActiveSheet?
     
     var body: some View {
         driveList
@@ -81,13 +93,15 @@ struct RouteList3: View {
                     newDriveButton
                 },
                 trailing: toggleOrderingButton)
-            .sheet(
-                isPresented: $newDriveIsPresented,
-                content: { self.newDriveCreationSheet })
-            .sheet(isPresented: $liveDriveIsPresented){
-                LiveDrive(drive: drive!, showLiveDrive: $liveDriveIsPresented)
-                    .environment(\.managedObjectContext,viewContext)
-                    .accentColor(.purple)
+            .sheet(item: $activeSheet){item in
+                switch item {
+                case .driveCreation:
+                    newDriveCreationSheet
+                case let .liveDrive(drive: drive):
+                    LiveDrive(drive: drive, activeSheet: $activeSheet)
+                        .environment(\.managedObjectContext,viewContext)
+                        .accentColor(.purple)
+                }
             }
     }
     
@@ -124,7 +138,7 @@ struct RouteList3: View {
     private var newDriveButton: some View {
         Button(
             action: {
-                self.newDriveIsPresented = true
+                activeSheet = .driveCreation
             },
             label: {
                 Label("", systemImage: "plus.circle").imageScale(.large)
@@ -135,10 +149,10 @@ struct RouteList3: View {
     private var newDriveCreationSheet: some View {
         return DriveCreationSheet(
             dismissAction: { goals in
-                self.newDriveIsPresented = false
                 if !goals.isEmpty {
-                    self.drive = newDrive(goals: goals)
-                    self.liveDriveIsPresented = true
+                    activeSheet = .liveDrive(drive:newDrive(goals: goals))
+                } else {
+                    activeSheet = nil
                 }
                 do {
                     try viewContext.save()

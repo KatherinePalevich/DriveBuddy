@@ -12,13 +12,13 @@ struct LiveDrive: View {
     @Environment(\.managedObjectContext) private var viewContext
     @ObservedObject var drive: Drive
     private let pasteboard = UIPasteboard.general
-    @Binding var showLiveDrive: Bool
+    @Binding var activeSheet: ActiveSheet?
     @State var startDate = Date()
     @ObservedObject var locationManager : LocationManager
     
-    init(drive: Drive, showLiveDrive : Binding<Bool>) {
+    init(drive: Drive, activeSheet : Binding<ActiveSheet?>) {
         self.drive = drive
-        self._showLiveDrive = showLiveDrive
+        self._activeSheet = activeSheet
         self.locationManager = LocationManager(drivingRoute: DrivingRoute())
     }
     
@@ -44,7 +44,7 @@ struct LiveDrive: View {
                 }
                 .navigationBarTitle(Text("Live Drive"), displayMode: .inline)
                 .navigationBarItems(trailing: Button(action: {
-                    self.showLiveDrive = false
+                    self.activeSheet = nil
                     drive.driveLength = Int32(-startDate.timeIntervalSinceNow)
                     drive.route = locationManager.drivingRoute.asString
                     do {
