@@ -7,6 +7,13 @@
 
 import CoreData
 import SwiftUI
+import MapKit
+
+extension CLLocationCoordinate2D : CustomStringConvertible {
+    public var description: String {
+        "lat: \(latitude), long: \(longitude)"
+    }
+}
 
 struct DriveForm: View {
     /// Manages the drive form

@@ -25,6 +25,9 @@ extension CLLocationCoordinate2D {
 public class DrivingRoute : NSObject, NSSecureCoding{
     public static var supportsSecureCoding = true
     var points : [CLLocationCoordinate2D]
+    public override var description: String {
+        points.description
+    }
     
     public required convenience init?(coder decoder: NSCoder) {
         let points = decoder.decodeObject(forKey: "points") as? [CLLocationCoordinate2D] ?? []

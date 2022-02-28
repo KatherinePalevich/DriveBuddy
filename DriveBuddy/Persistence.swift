@@ -38,6 +38,7 @@ struct PersistenceController {
         CreateGoal(goal: "Parallel Parking", details: "Park 12-18 inches from the curb", done: false, context: viewContext)
         CreateGoal(goal: "Backing out of Driveway into Traffic", details: "Make the proper stops and signals, while staying close to the curb. Be alert for pedestrian traffic and other vehicles.", done: false, context: viewContext)
         CreateGoal(goal: "Arm Signals", details: "Arms signals for right/left turns and slow or stop.", done: false, context: viewContext)
+        CreateGoal(goal: "Freeway Driving", details: "Maintain speed, distance between cars. Enter and exit safely.", done: false, context: viewContext)
         
         do {
             try viewContext.save()
