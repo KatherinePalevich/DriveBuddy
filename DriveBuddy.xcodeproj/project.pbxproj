@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		C91CE086267EF976008A272D /* GoalStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91CE085267EF976008A272D /* GoalStats.swift */; };
+		C93B393227CE9B5A00555BE7 /* DriveSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93B393127CE9B5A00555BE7 /* DriveSchedule.swift */; };
+		C93B393427CE9E5A00555BE7 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93B393327CE9E5A00555BE7 /* Events.swift */; };
+		C93B393627CE9EF200555BE7 /* EventViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93B393527CE9EF200555BE7 /* EventViewer.swift */; };
+		C93B393827CE9FA400555BE7 /* EventEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93B393727CE9FA400555BE7 /* EventEditor.swift */; };
 		C94A60D326DC7F5F005E2812 /* GoalWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A60D226DC7F5F005E2812 /* GoalWelcomeView.swift */; };
 		C94A60D526DC7FC0005E2812 /* StatsWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A60D426DC7FC0005E2812 /* StatsWelcomeView.swift */; };
 		C94AF86F2619620A00642C6D /* DriveEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94AF86E2619620A00642C6D /* DriveEditor.swift */; };
@@ -39,6 +43,10 @@
 
 /* Begin PBXFileReference section */
 		C91CE085267EF976008A272D /* GoalStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalStats.swift; sourceTree = "<group>"; };
+		C93B393127CE9B5A00555BE7 /* DriveSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveSchedule.swift; sourceTree = "<group>"; };
+		C93B393327CE9E5A00555BE7 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+		C93B393527CE9EF200555BE7 /* EventViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewer.swift; sourceTree = "<group>"; };
+		C93B393727CE9FA400555BE7 /* EventEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEditor.swift; sourceTree = "<group>"; };
 		C94A60D226DC7F5F005E2812 /* GoalWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalWelcomeView.swift; sourceTree = "<group>"; };
 		C94A60D426DC7FC0005E2812 /* StatsWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsWelcomeView.swift; sourceTree = "<group>"; };
 		C94AF86E2619620A00642C6D /* DriveEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveEditor.swift; sourceTree = "<group>"; };
@@ -142,6 +150,9 @@
 				C95AD08D2663572C000ACEB9 /* MapView.swift */,
 				C94A60D426DC7FC0005E2812 /* StatsWelcomeView.swift */,
 				C9D9C52B27BEC9A200AA105C /* TestView.swift */,
+				C93B393127CE9B5A00555BE7 /* DriveSchedule.swift */,
+				C93B393527CE9EF200555BE7 /* EventViewer.swift */,
+				C93B393727CE9FA400555BE7 /* EventEditor.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -153,6 +164,7 @@
 				C94AF8772619649200642C6D /* Drive+Helper.swift */,
 				C9735EAA2647962E006B5ACC /* LocationManager.swift */,
 				C9C4834E265A311300E57AEE /* DrivingRoute.swift */,
+				C93B393327CE9E5A00555BE7 /* Events.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -230,11 +242,13 @@
 				C9929C3E25F7FA6D0078E91A /* OverallStats.swift in Sources */,
 				C94A60D326DC7F5F005E2812 /* GoalWelcomeView.swift in Sources */,
 				C9929C4C25FDCE5B0078E91A /* GoalEditor.swift in Sources */,
+				C93B393427CE9E5A00555BE7 /* Events.swift in Sources */,
 				C94F21ED263E55D700D06B83 /* LiveDrive.swift in Sources */,
 				C9929C3825F7F8C50078E91A /* Goals.swift in Sources */,
 				C9929C2B25F7F79B0078E91A /* Persistence.swift in Sources */,
 				C960A86B2606E28500C91859 /* GoalForm.swift in Sources */,
 				C94AF872261962DC00642C6D /* DriveForm.swift in Sources */,
+				C93B393627CE9EF200555BE7 /* EventViewer.swift in Sources */,
 				C9929C4125F7FAEA0078E91A /* WelcomeView.swift in Sources */,
 				C95AD08E2663572C000ACEB9 /* MapView.swift in Sources */,
 				C94AF8782619649200642C6D /* Drive+Helper.swift in Sources */,
@@ -247,11 +261,13 @@
 				C95AD08C2663532D000ACEB9 /* Map+Extension.swift in Sources */,
 				C94AF875261963B100642C6D /* DriveCreationSheet.swift in Sources */,
 				C9C4834F265A311300E57AEE /* DrivingRoute.swift in Sources */,
+				C93B393827CE9FA400555BE7 /* EventEditor.swift in Sources */,
 				C9929C2425F7F79A0078E91A /* ContentView.swift in Sources */,
 				C94F21F1263E5EC500D06B83 /* GoalPicker.swift in Sources */,
 				C94AF86F2619620A00642C6D /* DriveEditor.swift in Sources */,
 				C9D9C52C27BEC9A200AA105C /* TestView.swift in Sources */,
 				C9929C2225F7F79A0078E91A /* DriveBuddyApp.swift in Sources */,
+				C93B393227CE9B5A00555BE7 /* DriveSchedule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,7 +325,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -364,7 +380,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
