@@ -39,6 +39,7 @@
 		C9929C4F25FDCEA90078E91A /* GoalCreationSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9929C4E25FDCEA90078E91A /* GoalCreationSheet.swift */; };
 		C9C4834F265A311300E57AEE /* DrivingRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C4834E265A311300E57AEE /* DrivingRoute.swift */; };
 		C9D9C52C27BEC9A200AA105C /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9C52B27BEC9A200AA105C /* TestView.swift */; };
+		C9F8878B27D13DF100EF1280 /* EKCalendarItem+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F8878A27D13DF100EF1280 /* EKCalendarItem+Identifiable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		C9929C4E25FDCEA90078E91A /* GoalCreationSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCreationSheet.swift; sourceTree = "<group>"; };
 		C9C4834E265A311300E57AEE /* DrivingRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrivingRoute.swift; sourceTree = "<group>"; };
 		C9D9C52B27BEC9A200AA105C /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		C9F8878A27D13DF100EF1280 /* EKCalendarItem+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EKCalendarItem+Identifiable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 				C9735EAA2647962E006B5ACC /* LocationManager.swift */,
 				C9C4834E265A311300E57AEE /* DrivingRoute.swift */,
 				C93B393327CE9E5A00555BE7 /* Events.swift */,
+				C9F8878A27D13DF100EF1280 /* EKCalendarItem+Identifiable.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				C9929C3825F7F8C50078E91A /* Goals.swift in Sources */,
 				C9929C2B25F7F79B0078E91A /* Persistence.swift in Sources */,
 				C960A86B2606E28500C91859 /* GoalForm.swift in Sources */,
+				C9F8878B27D13DF100EF1280 /* EKCalendarItem+Identifiable.swift in Sources */,
 				C94AF872261962DC00642C6D /* DriveForm.swift in Sources */,
 				C93B393627CE9EF200555BE7 /* EventViewer.swift in Sources */,
 				C9929C4125F7FAEA0078E91A /* WelcomeView.swift in Sources */,

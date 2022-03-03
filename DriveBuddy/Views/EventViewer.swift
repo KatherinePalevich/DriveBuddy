@@ -4,6 +4,7 @@
 //
 //  Created by Katherine Palevich on 3/1/22.
 //
+// Taken from https://stackoverflow.com/questions/63104171/swiftui-ekeventeditviewcontroller-fields-not-editable
 
 import SwiftUI
 import EventKitUI

@@ -15,12 +15,6 @@ struct DriveSchedule: View {
     }
 }
 
-struct DriveSchedule_Previews: PreviewProvider {
-    static var previews: some View {
-        DriveSchedule()
-    }
-}
-
 struct PlannerView: View {
     @ObservedObject var calendar = Events(date: Date())
     @State private var selectedEvent : EKEvent?
