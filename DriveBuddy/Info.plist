@@ -39,6 +39,8 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCalendarsUsageDescription</key>
+	<string>To display and update your calendar for each drive.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>To record and track your location during a drive.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
