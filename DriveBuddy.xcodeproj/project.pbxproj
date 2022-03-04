@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C91CE086267EF976008A272D /* GoalStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91CE085267EF976008A272D /* GoalStats.swift */; };
+		C91EC1F127D2933B00825AA7 /* DriveScheduleWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91EC1F027D2933B00825AA7 /* DriveScheduleWelcomeView.swift */; };
 		C93B393227CE9B5A00555BE7 /* DriveSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93B393127CE9B5A00555BE7 /* DriveSchedule.swift */; };
 		C93B393427CE9E5A00555BE7 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93B393327CE9E5A00555BE7 /* Events.swift */; };
 		C93B393627CE9EF200555BE7 /* EventViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93B393527CE9EF200555BE7 /* EventViewer.swift */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		C91CE085267EF976008A272D /* GoalStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalStats.swift; sourceTree = "<group>"; };
+		C91EC1F027D2933B00825AA7 /* DriveScheduleWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveScheduleWelcomeView.swift; sourceTree = "<group>"; };
 		C93B393127CE9B5A00555BE7 /* DriveSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveSchedule.swift; sourceTree = "<group>"; };
 		C93B393327CE9E5A00555BE7 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		C93B393527CE9EF200555BE7 /* EventViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewer.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				C93B393127CE9B5A00555BE7 /* DriveSchedule.swift */,
 				C93B393527CE9EF200555BE7 /* EventViewer.swift */,
 				C93B393727CE9FA400555BE7 /* EventEditor.swift */,
+				C91EC1F027D2933B00825AA7 /* DriveScheduleWelcomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				C93B393427CE9E5A00555BE7 /* Events.swift in Sources */,
 				C94F21ED263E55D700D06B83 /* LiveDrive.swift in Sources */,
 				C9929C3825F7F8C50078E91A /* Goals.swift in Sources */,
+				C91EC1F127D2933B00825AA7 /* DriveScheduleWelcomeView.swift in Sources */,
 				C9929C2B25F7F79B0078E91A /* Persistence.swift in Sources */,
 				C960A86B2606E28500C91859 /* GoalForm.swift in Sources */,
 				C9F8878B27D13DF100EF1280 /* EKCalendarItem+Identifiable.swift in Sources */,

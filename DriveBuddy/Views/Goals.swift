@@ -24,11 +24,7 @@ enum SortOrder {
 
 struct Goals: View {
     var body: some View {
-        List{
-            NavigationLink("Practice Drive Schedule", destination: DriveSchedule())
-            NavigationLink("Goals", destination: GoalList2())
-        }
-        //GoalList2()
+        GoalList2()
     }
 }
 
