@@ -11,7 +11,7 @@ struct DriveScheduleWelcomeView: View {
     var body: some View {
         VStack{
             Text("Welcome to Drive Buddy").font(.largeTitle)
-            Text("Swipe from the left or click Overall Stats to see Drive Buddy statistics").foregroundColor(.secondary)
+            Text("Swipe from the left or click Back to see Drive Buddy schedule").foregroundColor(.secondary)
         }
     }
 }

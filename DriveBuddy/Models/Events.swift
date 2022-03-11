@@ -14,6 +14,7 @@ class Events: ObservableObject {
     @Published public var dayEvents : [EKEvent] = []
     @Published public var weekEvents : [EKEvent] = []
     private var cancellables = Set<AnyCancellable>()
+    public static let driveBuddyEventString = "Created in the DriveBuddy application"
     
     public static let eventStore = EKEventStore()
     @Published public var date : Date {
@@ -54,7 +55,11 @@ class Events: ObservableObject {
         let endOfDay = calendar.nextDate(after: date, matching: dateComponents, matchingPolicy: .nextTime)!
         
         let predicate = Events.eventStore.predicateForEvents(withStart: beginningOfDay, end: endOfDay, calendars: Events.eventStore.calendars(for: EKEntityType.event))
-        dayEvents = Events.eventStore.events(matching: predicate)
+        
+        dayEvents = Events.eventStore.events(matching: predicate).filter {
+            $0.notes?.contains(Events.driveBuddyEventString) ?? false
+            //$0.title?.contains(Events.driveBuddyEventString) ?? false
+        }
         
     }
     
@@ -70,7 +75,10 @@ class Events: ObservableObject {
         
         
         let predicate = Events.eventStore.predicateForEvents(withStart: beginningOfWeek!, end: endOfWeek, calendars: Events.eventStore.calendars(for: EKEntityType.event))
-        weekEvents = Events.eventStore.events(matching: predicate)
+        weekEvents = Events.eventStore.events(matching: predicate).filter {
+            $0.notes?.contains(Events.driveBuddyEventString) ?? false
+            //$0.title?.contains(Events.driveBuddyEventString) ?? false
+        }
         
     }
     

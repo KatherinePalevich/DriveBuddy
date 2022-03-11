@@ -29,6 +29,7 @@ func makeUIViewController(context: UIViewControllerRepresentableContext<EventVie
     controller.event = theEvent
     controller.eventStore = Events.eventStore
     controller.editViewDelegate = context.coordinator
+    controller.event?.notes = Events.driveBuddyEventString
 
     return controller
 }
