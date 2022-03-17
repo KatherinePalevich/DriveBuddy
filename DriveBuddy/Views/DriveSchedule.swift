@@ -67,7 +67,7 @@ struct PlannerView: View {
     /// The event creation sheet.
     private var newEventCreationSheet: some View {
         let event = EKEvent(eventStore: Events.eventStore)
-        return EventViewer(event: event)
+        return EventViewer(event: event).accentColor(Color.purple)
     }
 }
 
